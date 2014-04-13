@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Rpicker</title>
+	<title>Restaurant Roulette</title>
 	<link rel="stylesheet" type="text/css" href="css/normalize.css">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css">
+	<link rel="stylesheet" type="text/css" href="css/manual.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
 	<script type="text/javascript" src="js/jquery-ui-10.4.custom.js"></script>
 	<style type="text/css">
@@ -59,13 +61,14 @@
 </head>
 <body>
 	<div class="container">
-		<h1>Restaurant Picker</h1>
+		<h1>Restaurant Roulette</h1>
+		<div>
 		<form action="pickPlace();" method="" class="form-group" >
 			<div>
-				<input type="text" placeholder="Restaurant" class="restaurant" required>
+				<input type="text" placeholder="Restaurant" class="form-control restaurant" required>
 			</div>
 			<div>
-				<input type="text" placeholder="Restaurant" class="restaurant" required>
+				<input type="text" placeholder="Restaurant" class="form-control restaurant" required>
 			</div>
 			<div id="buttons">
 				<button type="button" class="btn btn-primary pull-left" id="add" onclick="addPlace();"><span class="glypicon glyphicon-plus"> Add Restaurant</span></button>
@@ -73,6 +76,7 @@
 			</div>
 			<div class="clearfix"></div>
 		</form>
+		</div>
 	</div>
 </body>
 </html>

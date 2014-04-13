@@ -15,19 +15,18 @@ a:hover{
 }
 
 button {
-	width: 45%;
+	width: 40%;
 }
 
 div.container{
-	width: 400px;
-	text-align: center;
+	width: 350px;
+	text-align: justify;
 }
 div {
 	margin-top: 10px;
 }
 
 input.restaurant{
-
 }
 .remove{
 	display: block;
