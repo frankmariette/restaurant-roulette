@@ -58,6 +58,7 @@
 <head>
 	<meta char-set='utf-8'>
 	<title>Restaurant Roulette</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<link rel="stylesheet" type="text/css" href="css/normalize.css">
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
@@ -67,11 +68,15 @@
 	  #selectable .ui-selected { background: #F39814; color: white; }
 	  #selectable { list-style-type: none; margin: 0 auto; padding: 0; width: 60%; }
 	  #selectable li { margin: 3px; padding: 0.4em; font-size: 1.4em; height: 18px; }
+	  button{
+	  	color: green;
+	  }
 	</style>
 
 	<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
 	<script type="text/javascript" src="js/jquery-ui-1.10.4.custom.js"></script>
 	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<script type="text/javascript" src="js/navbar.js"></script>
 	<script type="text/javascript">
 		$(function() {
     		$( "#selectable" ).selectable();
@@ -86,6 +91,7 @@
 			var data = document.getElementsByClassName('ui-selected');
 			//console.log(data);
 			var rand = getRandomInt(min, data.length-1);
+			$('#result').remove();
 
 			//console.log(rand);
 			//console.log(data);
@@ -97,19 +103,44 @@
 
 </head>
 <body>
-<h1>Select at least 2 venues</h1>
-<div class="container">
-	<div class="selection">
-	<p id="feedback"></p>
-		<ul id="selectable">
-			<?php
-			for($i = 0; $i < sizeof($nameArray); $i++){
-			  echo "<li class='ui-widget-content'>". $nameArray[$i]." </li>";
-			}
-			?>
-		</ul>
+<div class="page-container">
+	<!-- top navbar -->
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+       <div class="container">
+    	<div class="navbar-header">
+           <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".sidebar-nav">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+           </button>
+           <a class="navbar-brand" href="/index.php">Next Meal</a>
+    	</div>
+       </div>
+    </div>
+      
+    <div class="container">
+      <div class="row row-offcanvas row-offcanvas-left">
+        
+        <!-- sidebar -->
+        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+            <ul class="nav">
+              <li class="active"><a href="/index.php">Home</a></li>
+              <li><a href="/options.php">Automated</a></li>
+              <li><a href="/manual.php">Manual</a></li>              
+            </ul>
+        </div>
+		<h1>Select at least 2 venues</h1>
+			<div class="selection">
+			<p id="feedback"></p>
+				<ul id="selectable">
+					<?php
+					for($i = 0; $i < sizeof($nameArray); $i++){
+					  echo "<li class='ui-widget-content'>". $nameArray[$i]." </li>";
+					}
+					?>
+				</ul>
 
-		<button type="button" onclick="pickPlace();"class="btn btn-success">Submit</button>
-	</div>
+				<button type="button" onclick="pickPlace();"class="btn btn-success">Submit</button>
+		</div>
 </body>
 </html>
