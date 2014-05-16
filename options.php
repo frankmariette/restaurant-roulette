@@ -22,6 +22,8 @@
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/options.css">
+
 	<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
 	<script type="text/javascript" src="js/bootstrap.js"></script>
 	<script type="text/javascript" src="js/navbar.js"></script>
@@ -52,35 +54,29 @@
              <span class="icon-bar"></span>
              <span class="icon-bar"></span>
            </button>
-           <a class="navbar-brand" href="#">Next Meal</a>
+           <a class="navbar-brand" href="index.php">Next Meal</a>
     	</div>
        </div>
-    </div>
-      
+    </div> 
     <div class="container">
-      <div class="row row-offcanvas row-offcanvas-left">
-        
-        <!-- sidebar -->
-        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
-            <ul class="nav">
-              <li class="active"><a href="/index.php">Home</a></li>
-              <li><a href="/options.php">Automated</a></li>
-              <li><a href="/manual.php">Manual</a></li>              
-            </ul>
-        </div>
-		<h1>Next Meal</h1>
+   		<h1>Enter a location</h1>
 		<form class="form-group" method="post" action="<?=$_SERVER['PHP_SELF'] ?>">
-			<div>
-				<input type="text" class="options form-control" name="city" placeholder="City" >
-			</div>
-			<div>
-				<input type="text" class="options form-control" name="state" placeholder="State" >
-			</div>
+			<div class="">
+				<div>
+					<input type="text" class="options form-control" name="city" placeholder="City" >
+				</div>
+				<div>
+					<input type="text" class="options form-control" name="state" placeholder="State" >
+				</div>
 
-			<div>
-				<button type="submit" class="btn btn-success" name="submit">Submit!</button>
+				<div>
+					<button type="submit" class="btn btn-success" name="submit">Submit!</button>
+				</div>
 			</div>
-</form>
+		</form>
+	</div>
+
+
 
 </body>
 </html>

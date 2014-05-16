@@ -14,19 +14,10 @@
 	<script type="text/javascript" src="js/navbar.js"></script>
 	<style type="text/css">
 		div.container{
-			/*width: 400px;*/
 			text-align: center;
 		}
-		div {
-			margin-top: 10px;
-		}
-
 		input.restaurant{
-			max-width: 90%;
-		}
-		.remove{
-			display: block;
-			float: right;
+			margin-top: 10px;
 		}
 
 	</style>
@@ -47,7 +38,7 @@
 
 			console.log(rand);
 
-			$('.clearfix').after('<div id="result"><scan style="color: green;">You should go to ' + data[rand].value + '!</div>');
+			$('.clearfix').after('<div id="result"><scan style="color: white;">You should go to ' + data[rand].value + '!</div>');
 			
 		};
 		function getRandomInt(min, max) {
@@ -63,7 +54,7 @@
 	</script>
 </head>
 <body>
-	<div class="page-container">
+<div class="page-container">
 	<!-- top navbar -->
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
        <div class="container">
@@ -73,37 +64,27 @@
              <span class="icon-bar"></span>
              <span class="icon-bar"></span>
            </button>
-           <a class="navbar-brand" href="#">Next Meal</a>
+           <a class="navbar-brand" href="index.php">Next Meal</a>
     	</div>
        </div>
-    </div>
-      
-    <div class="container">
-      <div class="row row-offcanvas row-offcanvas-left">
-        
-        <!-- sidebar -->
-        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
-            <ul class="nav">
-              <li class="active"><a href="/index.php">Home</a></li>
-              <li><a href="/options.php">Automated</a></li>
-              <li><a href="/manual.php">Manual</a></li>              
-            </ul>
-        </div>
+    </div> 
+	<div class="container">
 		<h1>Next Meal</h1>
 		<div>
-		<form action="pickPlace();" method="" class="form-group" >
-			<div>
-				<input type="text" placeholder="Restaurant" class="form-control restaurant" required>
-			</div>
-			<div>
-				<input type="text" placeholder="Restaurant" class="form-control restaurant" required>
-			</div>
-			<div id="buttons">
-				<button type="button" class="btn btn-primary pull-left" id="add" onclick="addPlace();"><span class="glypicon glyphicon-plus"> Add Restaurant</span></button>
-				<button type="button" class="btn btn-success pull-right" id="submit" onclick="pickPlace();">Pick a place!</button>
-			</div>
+			<form action="pickPlace();" method="" class="form-group" >
+				<div>
+					<input type="text" placeholder="Restaurant" class="form-control restaurant" required>
+				</div>
+				<div>
+					<input type="text" placeholder="Restaurant" class="form-control restaurant" required>
+				</div>
+				<div id="buttons">
+					<button type="button" class="btn btn-primary pull-left" id="add" onclick="addPlace();"><span class="glypicon glyphicon-plus"> Add Restaurant</span></button>
+					<button type="button" class="btn btn-success pull-right" id="submit" onclick="pickPlace();">Pick a place!</button>
+				</div>
+			</form>
 			<div class="clearfix"></div>
-		</form>
+		</div>
 		</div>
 	</div>
 </body>
